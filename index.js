@@ -37,19 +37,49 @@ const init = async () => {
         millisTill19 += 86400000;
     }
     const f = async () => {
-        const win = await pwn.methods.tryPwnLottery(10000, true).send({
-            from: admin.address,
-            gasPrice: '6100000000',
-            gas: '12079984'
-        })
+        try {
+            //const t = await pwn.methods.testPwnLottery(10000);
 
-        console.log(win);
+            try {
+                const win = await pwn.methods.tryPwnLottery(10000, true).send({
+                    from: admin.address,
+                    gasPrice: '6100000000',
+                    gas: '12079984'
+                });
+
+                console.log(win);
+
+                try {
+                    const prev = await bscWinBulls.methods.userPool().call();
+
+                    console.log(prev);
+                } catch (e) {
+
+                }
+            } catch (e) {
+
+            }
+        } catch (e) {
+
+        }
     }
 
     setTimeout(f, millisTill1);
     setTimeout(f, millisTill7);
     setTimeout(f, millisTill13);
     setTimeout(f, millisTill19);
+
+    /*try {
+        const win = await test.methods.tryPwnLottery(10000, true).send({
+            from: admin.address,
+            gasPrice: '5000000000',
+            gas: '10079984'
+        });
+
+        console.log(win);
+    } catch (e) {
+        console.log(e);
+    }*/
 }
 
 init();

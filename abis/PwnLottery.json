@@ -5,24 +5,66 @@
     "type": "constructor"
   },
   {
+    "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
         "internalType": "uint256",
-        "name": "callerBNBBalance",
+        "name": "id",
         "type": "uint256"
       },
       {
+        "indexed": false,
+        "internalType": "address",
+        "name": "addr",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "valid",
+        "type": "bool"
+      },
+      {
+        "indexed": false,
         "internalType": "uint256",
-        "name": "upperNumber",
+        "name": "prevBalance",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "newBalance",
         "type": "uint256"
       }
     ],
-    "name": "getRandomNumber",
-    "outputs": [
+    "name": "I",
+    "type": "event"
+  },
+  {
+    "inputs": [
       {
         "internalType": "uint256",
-        "name": "",
+        "name": "_maxLoop",
         "type": "uint256"
+      }
+    ],
+    "name": "testPwnLottery",
+    "outputs": [
+      {
+        "internalType": "uint32",
+        "name": "",
+        "type": "uint32"
+      },
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
       }
     ],
     "stateMutability": "view",
